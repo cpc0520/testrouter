@@ -6,11 +6,11 @@
    [ring.util.response :refer [response]]
    [ring.util.http-response :as response]))
 
-(defn home-page [request]
-  (layout/render request "home.html" {:docs (-> "docs/docs.md" io/resource slurp)}))
+; (defn home-page [request]
+;   (layout/render request "home.html" {:docs (-> "docs/docs.md" io/resource slurp)}))
 
-(defn about-page [request]
-  (layout/render request "about.html"))
+; (defn about-page [request]
+;   (layout/render request "about.html"))
 
 (defn foobar-get [request]
   (response {:foobar "get"}))
@@ -22,8 +22,8 @@
   [""
    ;{:middleware [middleware/wrap-csrf
    ;              middleware/wrap-formats]}
-   ["/" {:get home-page}]
-   ["/about" {:get about-page}]
+  ;  ["/" {:get home-page}]
+  ;  ["/about" {:get about-page}]
 
    ["/foobar" {:get foobar-get
                :post foobar-post}]])
