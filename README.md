@@ -2,20 +2,46 @@
 
 generated using Luminus version "3.44"
 
-FIXME
-
-## Prerequisites
-
-You will need [Leiningen][1] 2.0 or above installed.
-
-[1]: https://github.com/technomancy/leiningen
-
 ## Running
 
 To start a web server for the application, run:
 
     lein run 
+    
+## Function
+1. Simple GET/POST API
+```sh
+$ http POST :3000/foobar
+```
+```
+HTTP/1.1 200 OK
+Connection: Keep-Alive
+Content-Type: application/json; charset=utf-8
+Date: Mon, 29 Jul 2019 12:02:48 GMT
+Server: Aleph/0.4.4
+content-length: 17
 
-## License
+{
+    "foobar": "post"
+}
 
-Copyright © 2019 FIXME
+```
+
+```shell script
+$ http GET :3000/foobar
+```
+
+```
+HTTP/1.1 200 OK
+Connection: Keep-Alive
+Content-Type: application/json; charset=utf-8
+Date: Mon, 29 Jul 2019 12:03:49 GMT
+Server: Aleph/0.4.4
+content-length: 16
+
+{
+    "foobar": "get"
+}
+
+
+```
