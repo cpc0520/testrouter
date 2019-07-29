@@ -7,6 +7,7 @@
     [ring.middleware.content-type :refer [wrap-content-type]]
     [ring.middleware.webjars :refer [wrap-webjars]]
     [testrouter.env :refer [defaults]]
+    [ring.middleware.json :refer [wrap-json-response]]
     [mount.core :as mount]))
 
 (mount/defstate init-app
@@ -32,4 +33,4 @@
          (constantly (error-page {:status 406, :title "406 - Not acceptable"}))}))))
 
 (defn app []
-  (middleware/wrap-base #'app-routes))
+  (wrap-json-response #'app-routes))
